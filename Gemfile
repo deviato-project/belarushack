@@ -42,6 +42,11 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'capistrano',         require: false
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
 end

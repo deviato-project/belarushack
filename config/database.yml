@@ -81,5 +81,7 @@ test:
 production:
   <<: *default
   database: belarushack_production
-  username: belarushack
-  password: <%= ENV['BELARUSHACK_DATABASE_PASSWORD'] %>
+  host:     <%= Rails.application.credentials.dig :production, :database, :host %>
+  username: <%= Rails.application.credentials.dig :production, :database, :username %>
+  password: <%= Rails.application.credentials.dig :production, :database, :password %>
+
