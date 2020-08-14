@@ -10,6 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 document.addEventListener('DOMContentLoaded', function() {
+  M.AutoInit();
   var elems = document.querySelectorAll('select');
   var options = document.querySelectorAll('options');
   var instances = M.FormSelect.init(elems, options);

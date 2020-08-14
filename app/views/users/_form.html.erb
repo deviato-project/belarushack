@@ -24,10 +24,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s2">
+      <div class="input-field col s3">
         <%= form.label(:surname, value: "Причина обращения:") %>
       </div>
-      <div class="input-field col s10">
+      <div class="input-field col s9">
         <%= form.select(:user_type_id, UserType.pluck(:title_ru, :id)) %>
       </div>
     </div>
