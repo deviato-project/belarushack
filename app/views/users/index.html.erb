@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User type</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Funding reason</th>
+      <th>Funding amount</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.user_type_id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.surname %></td>
+        <td><%= user.title %></td>
+        <td><%= user.description %></td>
+        <td><%= user.funding_reason %></td>
+        <td><%= user.funding_amount %></td>
+        <td><%= user.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
