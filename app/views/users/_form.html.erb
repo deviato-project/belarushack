@@ -1,67 +1,87 @@
 <%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <div class="row">
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <%= form.label(:name, value: "Имя") %>
+        <%= form.text_field :name %>
+      </div>
+
+      <div class="input-field col s6">
+        <%= form.label(:surname, value: "Фамилия") %>
+        <%= form.text_field :surname %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :user_type_id %>
-    <%= form.select(:user_type_id, UserType.pluck(:title_ru, :id)) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.text_field :contact %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :surname %>
-    <%= form.text_field :surname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :funding_reason %>
-    <%= form.text_area :funding_reason %>
-  </div>
-
-  <div class="field">
-    <%= form.label :funding_amount %>
-    <%= form.text_field :funding_amount_cents %>
-  </div>
-
-  <div class="field">
-    <%= form.label :attachments %>
-    <%= form.file_field :attachments, multiple: true, direct_upload: true %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="row">
+      <div class="input-field col s2">
+        <%= form.label(:surname, value: "Причина обращения:") %>
+      </div>
+      <div class="input-field col s10">
+        <%= form.select(:user_type_id, UserType.pluck(:title_ru, :id)) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.label :email, value: "E-mail" %>
+        <%= form.text_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.label :contact, value: "Дополнителный способ связи" %>
+        <%= form.text_field :contact %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.label :title, value: "Должность" %>
+        <%= form.text_field :title %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.label :description, value: "Опишите детали случившегося" %>
+        <%= form.text_area(:description, class: "materialize-textarea") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.label :funding_reason, value: "Расскажите на что необходимы средства" %>
+        <%= form.text_area(:funding_reason, class: "materialize-textarea") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">attach_money</i>
+        <%= form.label :funding_amount, value: "Небходимая сумма" %>
+        <%= form.text_field :funding_amount_cents %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s3">
+        <span>Документы для подтверждения</span>
+      </div>
+      <div class="input-field col s9">
+        <%= form.file_field(:attachments, multiple: true, direct_upload: true) %>
+        <span class="helper-text" data-error="wrong" data-success="right">
+          Это необязательное поле. Но мы сможем помочь вам быстрее, если вы приложите документальное подтверждение о необходимости финасовой помощи. Это могут быть счета за лечение, постановления о взысканиях, судебные издержки,
+          прочие документы, которые упростят нам рассмотрение
+        </span>
+      </div>
+    </div>
+    <div class="actions">
+      <%= form.submit(class: "btn right", value: "Оставить заявку") %>
+    </div>
   </div>
 <% end %>
