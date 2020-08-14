@@ -73,7 +73,7 @@
         <span>Документы для подтверждения</span>
       </div>
       <div class="input-field col s9">
-        <%= form.file_field(:attachments, multiple: true, direct_upload: true) %>
+        <%= form.file_field(:attachments, multiple: true, direct_upload: true, accept: User::ALLOWED_ATTACHMENT_TYPES.join(',')) %>
         <span class="helper-text" data-error="wrong" data-success="right">
           Это необязательное поле. Но мы сможем помочь вам быстрее, если вы приложите документальное подтверждение о необходимости финасовой помощи. Это могут быть счета за лечение, постановления о взысканиях, судебные издержки,
           прочие документы, которые упростят нам рассмотрение
