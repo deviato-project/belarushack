@@ -10,18 +10,28 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Belarushack</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Цели</a></li>
-          <li><a href="badges.html">Гарантии</a></li>
-          <li><a href="collapsible.html">О фонде</a></li>
-        </ul>
+    <main>
+      <nav>
+        <div class="nav-wrapper container">
+          <a href="#" class="brand-logo">Belarushack</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Цели</a></li>
+            <li><a href="badges.html">Гарантии</a></li>
+            <li><a href="collapsible.html">О фонде</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <%= yield %>
       </div>
-    </nav>
-    <div class="container">
-      <%= yield %>
-    </div>
+    </main>
+    <footer class="page-footer blue-grey">
+      <div class="footer-copyright">
+        <div class="container">
+        © 2020 Deviato Project
+        <a class="grey-text text-lighten-4 right" href="mailto:it@deviato.co">it@deviato.co</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
