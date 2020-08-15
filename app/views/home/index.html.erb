@@ -1,6 +1,11 @@
-<%= javascript_pack_tag 'paypal' %>
-<div class="row">
-  <form class="col s12" action="/request">
+<ul class="collapsible">
+<li>
+  <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Оставить заявку на помощь</span></div>
+  <div class="collapsible-body"><%= render 'users/form', user: @user %></div>
+</li>
+<li>
+  <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Внести пожертвование</span></div>
+  <div class="collapsible-body">
     <div class="row">
       <div class="input-field col s1">
         <p>Анонимно</p>
@@ -14,28 +19,6 @@
         </div>
       </div>
     </div>
-    <div id="paypal-button-container"></div>
-    <div class="row">
-      <div class="input-field col s6">
-        <label for="first_name">Имя</label>
-        <input id="first_name" type="text">
-      </div>
-      <div class="input-field col s6">
-        <input id="last_name" type="text">
-        <label for="last_name">Фамилия</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="email" type="email">
-        <label for="email">Email</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="amount" type="text" class="validate">
-        <label for="amount">Сумма пожертвования</label>
-      </div>
-    </div>
-  </form>
-</div>
+    <%= javascript_pack_tag 'paypal' %>
+  </div>
+</li>
