@@ -1,24 +1,35 @@
+<%= javascript_pack_tag 'paypal' %>
 <ul class="collapsible">
-<li>
-  <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Оставить заявку на помощь</span></div>
-  <div class="collapsible-body"><%= render 'users/form', user: @user %></div>
-</li>
-<li>
-  <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Внести пожертвование</span></div>
-  <div class="collapsible-body">
-    <div class="row">
-      <div class="input-field col s1">
-        <p>Анонимно</p>
-      </div>
-      <div class="input-field col s2">
-        <div class="switch inline" >
-          <label>
-            <input type="checkbox">
-            <span class="lever"></span>
-          </label>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Оставить заявку на помощь</span></div>
+    <div class="collapsible-body"><%= render "users/form", user: @user %></div>
+  </li>
+  <li>
+    <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Внести пожертвование</span></div>
+    <div class="collapsible-body">
+      <div class="row">
+        <div class="input-field col s1">
+          <p>Анонимно</p>
+        </div>
+        <div class="input-field col s2">
+          <div class="switch inline">
+            <label>
+              <input type="checkbox" id="anonymous">
+              <span class="lever"></span>
+            </label>
+          </div>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">attach_money</i>
+          <label for="funding_amount">Сумма пожертвования</label>
+          <input type="text" id="funding_amount">
+        </div>
+      </div>
+      <div class="row">
+        <div id="paypal-button-container" class="center"></div>
+      </div>
     </div>
-    <%= javascript_pack_tag 'paypal' %>
-  </div>
-</li>
+  </li>
+</ul>
