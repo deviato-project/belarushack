@@ -1,4 +1,15 @@
-<%= javascript_pack_tag 'paypal' %>
+<h2 class="center-align">BelarusHack - благотварительный агент</h2>
+<div class="row">
+  <p>
+    Задача данного проекта избавить людей находящихся под давление или пострадавших от дополнительной нагрузки в виде общения с фондами.
+    Мы возьмем на себя обязанность "благотворительного агента", который направит вашу просьбу в подходящий фонд и будет добиваться скорейшей помощи.
+  </p>
+</div>
+<div class="row">
+  <p>
+    А для тех, кто хочет пожертвовать у нас представлен список доверенных фондов с указанием специализации.
+  </p>
+</div>
 <ul class="collapsible">
   <li>
     <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Оставить заявку на помощь</span></div>
@@ -6,30 +17,21 @@
   </li>
   <li>
     <div class="collapsible-header"><i class="material-icons">keyboard_arrow_right</i><span>Внести пожертвование</span></div>
-    <div class="collapsible-body">
-      <div class="row">
-        <div class="input-field col s1">
-          <p>Анонимно</p>
-        </div>
-        <div class="input-field col s2">
-          <div class="switch inline">
-            <label>
-              <input type="checkbox" id="anonymous">
-              <span class="lever"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">attach_money</i>
-          <label for="funding_amount">Сумма пожертвования</label>
-          <input type="text" id="funding_amount">
-        </div>
-      </div>
-      <div class="row">
-        <div id="paypal-button-container" class="center"></div>
-      </div>
+    <div class="collapsible-body row">
+      <p class="col s12">
+        Здесь представлен список фондов и направления, в которых они помогают.
+      </p>
+      <ul class="collection row">
+        <li class="collection-item">
+          <a href="https://www.protectbelarus.org/">protectbelarus.org</a> - фонд помощи сотрудникам силовых структур, выступивших против насилия и режима
+        </li>
+        <li class="collection-item">
+          <a href="https://www.facebook.com/donate/1123543824684874/1179674872398974/?fbclid=IwAR0PiAySGOmH8Pi9jHsFOaPWqYtlxV4D8-IP0bgbIt3tJ_pxzVILvmAoXug">Support For Belarus</a> - фонд помощи жертвам насилия со стороны силовиков в ходе мирных проестных акций
+        </li>
+        <li class="collection-item">
+          Если вы знаете другие фонды, помогающие протестующим в Беларуси, напишите нам: <a href="mailto:it@deviato.co">it@deviato.co</a>
+        </li>
+      </ul>
     </div>
   </li>
 </ul>
